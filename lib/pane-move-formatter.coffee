@@ -1,22 +1,22 @@
 module.exports =
-  move: (orientation, index) ->
+  move: (index) ->
     # get current destroy settings
     destroy_empty_panes = atom.config.get 'core.destroyEmptyPanes'
 
     atom.config.set 'core.destroyEmptyPanes', false
 
     # get pane
-    active_pane = atom.workspaceView.getActivePane()
+    current_pane = atom.workspaceView.getActivePane()
 
     # target pane
-    target_pane = @getTargetPane active_pane, index
+    target_pane = @getTargetPane current_pane, index
 
     # do nothing if the panes are the same
-    if target_pane? and active_pane isnt target_pane
+    if target_pane? and current_pane isnt target_pane
       # get active item
       active_item = atom.workspace.getActivePaneItem()
 
-      @moveItem active_item, active_pane, target_pane
+      @moveItem active_item, current_pane, target_pane
 
     # reset destroy settings
     atom.config.set 'core.destroyEmptyPanes', destroy_empty_panes
