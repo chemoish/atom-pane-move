@@ -1,0 +1,19 @@
+{
+  "name": "pane-move-plus",
+  "main": "./lib/pane-move",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "activationEvents": [
+    "pane-move:down",
+    "pane-move:left",
+    "pane-move:right",
+    "pane-move:up"
+  ],
+  "repository": "https://github.com/atom/pane-move",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
