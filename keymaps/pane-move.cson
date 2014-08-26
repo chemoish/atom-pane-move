@@ -7,8 +7,14 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.editor':
+'.platform-darwin .editor':
   'cmd-alt-ctrl-down':  'pane-move:down'
   'cmd-alt-ctrl-left':  'pane-move:left'
   'cmd-alt-ctrl-right': 'pane-move:right'
   'cmd-alt-ctrl-up':    'pane-move:up'
+
+'.platform-win32 .editor, .platform-linux .editor':
+  'alt-ctrl-shift-down':  'pane-move:down'
+  'alt-ctrl-shift-left':  'pane-move:left'
+  'alt-ctrl-shift-right': 'pane-move:right'
+  'alt-ctrl-shift-up':    'pane-move:up'
