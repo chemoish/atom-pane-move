@@ -11,13 +11,13 @@ describe "PaneMove:", ->
   beforeEach ->
     waitsForPromise ->
       atom.workspaceView = new WorkspaceView
-      atom.workspaceView.openSync()
+      atom.workspaceView.open()
 
       atom.workspaceView.open 'foo.txt'
       atom.workspaceView.open 'bar.txt'
 
   it 'should allow panes to be moved right in a multicolumn layout', ->
-    panes = atom.workspaceView.getPanes()
+    panes = atom.workspaceView.getPaneViews()
 
     panes[0].splitRight()
     panes[0].activate()
@@ -25,7 +25,7 @@ describe "PaneMove:", ->
     expect(panes[0].getItems().length).toBe 3
     expect(atom.workspace.getActivePaneItem().getTitle()).toBe 'bar.txt'
 
-    panes = atom.workspaceView.getPanes()
+    panes = atom.workspaceView.getPaneViews()
 
     PaneMove.moveRight()
 
@@ -36,7 +36,7 @@ describe "PaneMove:", ->
     expect(atom.workspace.getActivePaneItem().getTitle()).toBe 'bar.txt'
 
   it 'should allow panes to be moved left in a multicolumn layout', ->
-    panes = atom.workspaceView.getPanes()
+    panes = atom.workspaceView.getPaneViews()
 
     panes[0].splitLeft()
     panes[0].activate()
@@ -44,7 +44,7 @@ describe "PaneMove:", ->
     expect(panes[0].getItems().length).toBe 3
     expect(atom.workspace.getActivePaneItem().getTitle()).toBe 'bar.txt'
 
-    panes = atom.workspaceView.getPanes()
+    panes = atom.workspaceView.getPaneViews()
 
     PaneMove.moveLeft()
 
@@ -55,7 +55,7 @@ describe "PaneMove:", ->
     expect(atom.workspace.getActivePaneItem().getTitle()).toBe 'bar.txt'
 
   it 'should not allow panes to be moved left when it is the first pane', ->
-    panes = atom.workspaceView.getPanes()
+    panes = atom.workspaceView.getPaneViews()
 
     panes[0].splitRight()
     panes[0].activate()
@@ -63,7 +63,7 @@ describe "PaneMove:", ->
     expect(panes[0].getItems().length).toBe 3
     expect(atom.workspace.getActivePaneItem().getTitle()).toBe 'bar.txt'
 
-    panes = atom.workspaceView.getPanes()
+    panes = atom.workspaceView.getPaneViews()
 
     PaneMove.moveRight()
     PaneMove.moveRight()
@@ -75,7 +75,7 @@ describe "PaneMove:", ->
     expect(atom.workspace.getActivePaneItem().getTitle()).toBe 'bar.txt'
 
   it 'should not allow panes to be moved right when it is the last pane', ->
-    panes = atom.workspaceView.getPanes()
+    panes = atom.workspaceView.getPaneViews()
 
     panes[0].splitLeft()
     panes[0].activate()
@@ -83,7 +83,7 @@ describe "PaneMove:", ->
     expect(panes[0].getItems().length).toBe 3
     expect(atom.workspace.getActivePaneItem().getTitle()).toBe 'bar.txt'
 
-    panes = atom.workspaceView.getPanes()
+    panes = atom.workspaceView.getPaneViews()
 
     PaneMove.moveLeft()
     PaneMove.moveLeft()
