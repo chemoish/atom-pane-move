@@ -6,7 +6,7 @@ module.exports =
     atom.config.set 'core.destroyEmptyPanes', false
 
     # get pane
-    current_pane = atom.workspaceView.getActivePaneView()
+    current_pane = atom.workspace.getActivePane()
 
     # target pane
     target_pane = @getTargetPane current_pane, index
@@ -22,7 +22,7 @@ module.exports =
     atom.config.set 'core.destroyEmptyPanes', destroy_empty_panes
 
   getTargetPane: (pane, index) ->
-    panes = atom.workspaceView.getPaneViews()
+    panes = atom.workspace.getPanes()
 
     current_index = panes.indexOf pane
 
