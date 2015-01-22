@@ -7,13 +7,13 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.platform-darwin .editor':
+'.platform-darwin .atom-text-editor':
   'cmd-alt-ctrl-down':  'pane-move:down'
   'cmd-alt-ctrl-left':  'pane-move:left'
   'cmd-alt-ctrl-right': 'pane-move:right'
   'cmd-alt-ctrl-up':    'pane-move:up'
 
-'.platform-win32 .editor, .platform-linux .editor':
+'.platform-win32 .atom-text-editor, .platform-linux .atom-text-editor':
   'alt-ctrl-shift-down':  'pane-move:down'
   'alt-ctrl-shift-left':  'pane-move:left'
   'alt-ctrl-shift-right': 'pane-move:right'
