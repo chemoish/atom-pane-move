@@ -1,7 +1,7 @@
 {
   "name": "pane-move-plus",
   "main": "./lib/pane-move",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Can has move your panes from side to side.",
   "activationEvents": [
     "pane-move:down",
