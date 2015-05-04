@@ -3,12 +3,14 @@
   "main": "./lib/pane-move",
   "version": "0.2.5",
   "description": "Can has move your panes from side to side.",
-  "activationEvents": [
-    "pane-move:down",
-    "pane-move:left",
-    "pane-move:right",
-    "pane-move:up"
-  ],
+  "activationCommands": {
+    "atom-text-editor": [
+      "pane-move:down",
+      "pane-move:left",
+      "pane-move:right",
+      "pane-move:up"
+    ]
+  },
   "repository": "https://github.com/chemoish/atom-pane-move",
   "license": "MIT",
   "engines": {
