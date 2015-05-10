@@ -1,7 +1,7 @@
 {
   "name": "pane-move-plus",
   "main": "./lib/pane-move",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "Can has move your panes from side to side.",
   "activationCommands": {
     "atom-text-editor": [
@@ -9,7 +9,6 @@
       "pane-move:left",
       "pane-move:right",
       "pane-move:up",
-      
       "pane-move-to:1",
       "pane-move-to:2",
       "pane-move-to:3",
