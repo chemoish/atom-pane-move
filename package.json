@@ -8,7 +8,12 @@
       "pane-move:down",
       "pane-move:left",
       "pane-move:right",
-      "pane-move:up"
+      "pane-move:up",
+      
+      "pane-move-to:1",
+      "pane-move-to:2",
+      "pane-move-to:3",
+      "pane-move-to:4"
     ]
   },
   "repository": "https://github.com/chemoish/atom-pane-move",

@@ -7,6 +7,12 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
+'atom-text-editor':
+  'ctrl-!': 'pane-move-to:1'
+  'ctrl-@': 'pane-move-to:2'
+  'ctrl-#': 'pane-move-to:3'
+  'ctrl-$': 'pane-move-to:4'
+
 '.platform-darwin atom-text-editor':
   'cmd-alt-ctrl-down':  'pane-move:down'
   'cmd-alt-ctrl-left':  'pane-move:left'
