@@ -8,7 +8,7 @@ Move files through each pane or to a targeted pane.
 | --- | --- | --- |
 | Move files left | Cmd + Alt + Ctrl + ← | Alt + Shift + Ctrl + ← |
 | Move files right | Cmd + Alt + Ctrl + → | Alt + Shift + Ctrl + → |
-|	Move files to target pane | Ctrl + Shift + [1-4] | Same |
+| Move files to target pane | Ctrl + Shift + [1-4] | Same |
 
 ## Demo
 ![pane-layout](https://raw.github.com/chemoish/atom-pane-move/master/demo.gif)

@@ -1,16 +1,20 @@
 module.exports =
-  getTargetPane: (pane, index) ->
-    panes = atom.workspace.getPanes()
+  getPaneByOffset: (pane, offset) ->
+    panes = atom.workspace.getCenter().getPanes()
 
     current_index = panes.indexOf pane
 
-    target_index = current_index + index
-    target_index = 0 if target_index < 0
-    target_index = panes.length - 1 if target_index >= panes.length
+    target_index = current_index + offset
+
+    # enable tab cycling
+    if target_index < 0
+      target_index = panes.length - 1 # last pane
+    else if target_index >= panes.length
+      target_index = 0 # first pane
 
     return panes[target_index]
 
-  move: (index) ->
+  move: (offset) ->
     # get current destroy settings
     destroy_empty_panes = atom.config.get 'core.destroyEmptyPanes'
 
@@ -20,7 +24,7 @@ module.exports =
     current_pane = atom.workspace.getActivePane()
 
     # target pane
-    target_pane = @getTargetPane current_pane, index
+    target_pane = @getPaneByOffset current_pane, offset
 
     # do nothing if the panes are the same
     if target_pane? and current_pane isnt target_pane
@@ -49,7 +53,7 @@ module.exports =
     current_pane = atom.workspace.getActivePane()
 
     # target pane
-    target_pane = atom.workspace.getPanes()[column - 1]
+    target_pane = atom.workspace.getCenter().getPanes()[column - 1]
 
     # do nothing if the panes are the same
     if target_pane? and current_pane isnt target_pane
